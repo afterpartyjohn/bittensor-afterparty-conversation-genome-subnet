@@ -10,10 +10,10 @@
   - [System Design](#system-design)
   - [Rewards and Incentives](#rewards-and-incentives)
 - Getting Started
-  - [Quickstart Mock Tests] (#quickstart-mock-tests)
-  - [Configuration & API Tests] (#quickstart-configuration-and-api-tests)
-  - [Mining] (#mining)
-  - [Validating] (#validating)
+  - [Quickstart Mock Tests](#quickstart-mock-tests)
+  - [Configuration & API Tests](#quickstart-configuration-and-api-tests)
+  - [Mining](#mining)
+  - [Validating](#validating)
 
 ---
 
