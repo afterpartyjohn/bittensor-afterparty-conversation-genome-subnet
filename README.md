@@ -9,8 +9,10 @@
   - [System Design](#system-design)
   - [Rewards and Incentives](#rewards-and-incentives)
 - Getting Started
+  - [Installation](#installation)
   - [Quickstart Mock Tests](#quickstart-mock-tests)
   - [Configuration & API Tests](#quickstart-configuration-and-api-tests)
+- Subnet Roles
   - [Mining](#mining)
   - [Validating](#validating)
 
@@ -48,18 +50,19 @@ flowchart TD
 - Open-source dataset for training and fine-tuning conversational AI models
 - Incentivized mining and validation system for data contribution and integrity
 
+# Installation
 
-# Quickstart Mock Tests
-
-The best way to begin to understand the Conversation Genome (CG) is to run the unit tests. These tests are meant to provide verbose output so you can see how the process works. They also execute against mock data sources and APIs so you don't need to have anything set up in terms of keys, etc. to see how this operatates.
-
-Clone the repo and install the requirements:
+This repository requires python3.{} or higher. To install it, simply clone this repository and install the dependencies:
 
 ```console
 git clone https://github.com/afterpartyai/bittensor-afterparty-conversation-genome-subnet.git ap-cg-subnet
 cd ap-cg-subnet
 pip install -r requirements.txt
 ```
+
+# Quickstart Mock Tests
+
+The best way to begin to understand the Conversation Genome (CG) is to run the unit tests. These tests are meant to provide verbose output so you can see how the process works. They also execute against mock data sources and APIs so you don't need to have anything set up in terms of keys, etc. to see how this operatates.
 
 Once this is setup, let's run the Miner, so you can watch the process at work:
 
