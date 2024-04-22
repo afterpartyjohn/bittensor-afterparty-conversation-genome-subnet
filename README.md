@@ -5,7 +5,7 @@
 ---
 - [Conversation Genome Project](#conversation-genome-project)
   - [Key Features](#key-features)
-- [Conversation Genome Project Overview]
+- Conversation Genome Project Overview
   - [Benefits](#benefits)
   - [System Design](#system-design)
   - [Rewards and Incentives](#rewards-and-incentives)
