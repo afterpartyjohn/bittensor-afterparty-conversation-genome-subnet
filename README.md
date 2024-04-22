@@ -155,34 +155,6 @@ When you're ready to register and run on mainnet, use this file:
 bash run_mainnet.sh
 ```
 
-# Conversation Genome Project Overview
-
-Conversation Genome Project (CGP) use the Bittensor infrastructure the refine data related to conversations.
-
-## Benefits
-
-- Addresses the lack of personalization in current conversational AI models
-- Enables natural and engaging conversations tailored to individual contexts and preferences
-- Provides a comprehensive and annotated dataset for conversational AI development
-- Encourages open-source community contributions and advancements
-- Maintains data integrity through validation and scoring mechanisms
-
-## System Design
-
-- Data stores: Primary source of truth, conversation windows, participant profiles, and vector database
-- Validator roles: Pull data, ground conversations, create windows, and score submissions
-- Miner roles: Process conversation windows, provide metadata and tags
-- Data flow: Ground truth establishment, window creation, miner submissions, scoring, and validation
-
-## Rewards and Incentives
-
-- Miners rewarded for accurate and valuable metadata contributions
-- Bell curve distribution of rewards to encourage high-quality submissions
-- Cross-referencing and vector space analysis to ensure data integrity
-- Boring Index algorithm for assessing conversation quality (not yet used for miner rewards)
-
-
-
 ## Mining
 
 You can launch your miners via pm2 using the following command.
@@ -215,3 +187,29 @@ mindmap
       Twitter
       Chat
 ```
+
+# Conversation Genome Project Overview
+
+Conversation Genome Project (CGP) use the Bittensor infrastructure the refine data related to conversations.
+
+## Benefits
+
+- Addresses the lack of personalization in current conversational AI models
+- Enables natural and engaging conversations tailored to individual contexts and preferences
+- Provides a comprehensive and annotated dataset for conversational AI development
+- Encourages open-source community contributions and advancements
+- Maintains data integrity through validation and scoring mechanisms
+
+## System Design
+
+- Data stores: Primary source of truth, conversation windows, participant profiles, and vector database
+- Validator roles: Pull data, ground conversations, create windows, and score submissions
+- Miner roles: Process conversation windows, provide metadata and tags
+- Data flow: Ground truth establishment, window creation, miner submissions, scoring, and validation
+
+## Rewards and Incentives
+
+- Miners rewarded for accurate and valuable metadata contributions
+- Bell curve distribution of rewards to encourage high-quality submissions
+- Cross-referencing and vector space analysis to ensure data integrity
+- Boring Index algorithm for assessing conversation quality (not yet used for miner rewards)
