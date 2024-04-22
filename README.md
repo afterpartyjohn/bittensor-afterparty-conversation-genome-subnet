@@ -61,8 +61,8 @@ Clone the repo and install the requirements:
 
 ```console
 git clone https://github.com/afterpartyai/bittensor-afterparty-conversation-genome-subnet.git ap-cg-subnet
-pip install -r requirements.txt
 cd ap-cg-subnet
+pip install -r requirements.txt
 ```
 
 Once this is setup, let's run the Miner, so you can watch the process at work:
