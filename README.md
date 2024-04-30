@@ -171,8 +171,77 @@ You can launch your validator via pm2 using the following command.
 
 `pm2 start ./validators/validator.py --interpreter python3 -- --netuid 18 --subtensor.network <LOCAL/FINNEY/TEST> --wallet.name <WALLET NAME> --wallet.hotkey <HOTKEY NAME>`
 
+## Using Runpod
 
+Runpod is a very helpful resource for easily launching and managing cloud GPU and CPU instances, however, there are several configuration settings that must be implemented both on Runpod and in your start command for the subnet. 
 
+### Choosing an Instance
+
+To run the subnet code for CGP, you'll need either a GPU or a CPU, depending on your subnet role and configuration. 
+
+Miners using an OpenAI API Key, you will need a CPU with at least __GB of Ram and __GB of Disk Space. Runpod provides basic CPU units of different processing powers. 
+
+Miners using the out-of-the-box ___ LLM will need a GPU with at least __GB of VRam and __ of Disk Space. We recommend ____ and ____ models. 
+
+### Configuring Your Instance
+
+Runpod Instances are dockerized. As a result, there are tricky configurations with ports to be able to run processes over the network. 
+
+When you have selected your instance, click "Edit Template." 
+
+<insert photo>
+
+With the editing window open, you adjust your container disk space and/or volume diskspace to match the needs of your neuron, and you can expose additional ports. You will need to expose symmetrical TCP Ports, which requires you to specify non-standard ports >=700000 in the "Expose TCP ports" field. Add however many ports you will need (we recommend at least 2, or more if you want to run additional miners).
+
+<insert photo>
+
+Now, you can deploy your instance. Once it is deployed, navigate to your pods, find the instance you just launched, click "Connect" and navigate to the "TCP Port Mappings" tab. here, you should see your Symmetrical TCP Port IDs. 
+
+<insert photo>
+
+### Starting Your Neuron
+
+**Important!!** You will need to add one of these ports to your start command for the neuron you are running, using the flag 
+
+`--axon.port <port ID>` 
+
+Every process will require a unique port, so if you run a second neuron, you will need a second Port ID. See below for an EXAMPLE Full start command 
+
+`enter start command here`
+
+### Running a Subtensor on Runpod
+
+Unfortunately, there is no straight-forward or reliable way to run a local subtensor on a Runpod Instance. You can, however, leverage another cloud provider of your choice to run a Subtensor, and connect to that local subtensor using the `--subtensor.chain_endpoint <your chain endpoint>` flag in your neuron start command. For further information on running a local subtensor, please see the [Bittensor Docs](https://docs.bittensor.com/subtensor-nodes/). 
+
+## Managing Processes
+
+While there are many options for managing your processes, we recommend either pm2 or Screen. Please see below for instructions on installing and running pm2
+
+### pm2 Installation and Management
+
+To install Pm2 on your Ubuntu Device, use 
+
+`apt install nodejs npm
+npm install -g pm2`
+
+To run your process in pm2, use the following command format: 
+
+`pm2 start "<your neuron start command here>" --name "<your process name here>"`
+
+Full example:
+
+`pm2 start "python3 -m neurons.miner --netuid 1 --wallet.name default --wallet.hotkey default --logging.debug --axon.port 40049" --name "miner"`
+
+The following Commands will be useful for management: 
+
+`
+pm2 list # lists all pm2 processes
+pm2 logs <pid> # replace pid with your process ID to view logs
+pm2 restart <pid> # restart this pic
+pm2 stop <pid> # stops your pid
+pm2 del <pid> # deletes your pid
+pm2 describe <pid> # prints out metadata on the process
+`
 
 
 ```mermaid
