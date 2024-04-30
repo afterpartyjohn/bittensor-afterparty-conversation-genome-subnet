@@ -171,9 +171,11 @@ You can launch your validator via pm2 using the following command.
 
 `pm2 start ./validators/validator.py --interpreter python3 -- --netuid 18 --subtensor.network <LOCAL/FINNEY/TEST> --wallet.name <WALLET NAME> --wallet.hotkey <HOTKEY NAME>`
 
+
 ## Using Runpod
 
 Runpod is a very helpful resource for easily launching and managing cloud GPU and CPU instances, however, there are several configuration settings that must be implemented both on Runpod and in your start command for the subnet. 
+
 
 ### Choosing an Instance
 
@@ -182,6 +184,7 @@ To run the subnet code for CGP, you'll need either a GPU or a CPU, depending on 
 Miners using an OpenAI API Key, you will need a CPU with at least __GB of Ram and __GB of Disk Space. Runpod provides basic CPU units of different processing powers. 
 
 Miners using the out-of-the-box ___ LLM will need a GPU with at least __GB of VRam and __ of Disk Space. We recommend ____ and ____ models. 
+
 
 ### Configuring Your Instance
 
@@ -199,6 +202,7 @@ Now, you can deploy your instance. Once it is deployed, navigate to your pods, f
 
 <insert photo>
 
+
 ### Starting Your Neuron
 
 **Important!!** You will need to add one of these ports to your start command for the neuron you are running, using the flag 
@@ -209,13 +213,16 @@ Every process will require a unique port, so if you run a second neuron, you wil
 
 `enter start command here`
 
+
 ### Running a Subtensor on Runpod
 
 Unfortunately, there is no straight-forward or reliable way to run a local subtensor on a Runpod Instance. You can, however, leverage another cloud provider of your choice to run a Subtensor, and connect to that local subtensor using the `--subtensor.chain_endpoint <your chain endpoint>` flag in your neuron start command. For further information on running a local subtensor, please see the [Bittensor Docs](https://docs.bittensor.com/subtensor-nodes/). 
 
+
 ## Managing Processes
 
 While there are many options for managing your processes, we recommend either pm2 or Screen. Please see below for instructions on installing and running pm2
+
 
 ### pm2 Installation and Management
 
@@ -228,11 +235,15 @@ npm install -g pm2
 
 To run your process in pm2, use the following command format: 
 
-```pm2 start "<your neuron start command here>" --name "<your process name here>"```
+```
+pm2 start "<your neuron start command here>" --name "<your process name here>"
+```
 
 Full example:
 
-```pm2 start "python3 -m neurons.miner --netuid 1 --wallet.name default --wallet.hotkey default --logging.debug --axon.port 40049" --name "miner"```
+```
+pm2 start "python3 -m neurons.miner --netuid 1 --wallet.name default --wallet.hotkey default --logging.debug --axon.port 40049" --name "miner"
+```
 
 The following Commands will be useful for management: 
 
