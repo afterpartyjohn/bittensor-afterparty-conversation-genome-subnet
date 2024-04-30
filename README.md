@@ -221,27 +221,29 @@ While there are many options for managing your processes, we recommend either pm
 
 To install Pm2 on your Ubuntu Device, use 
 
-`apt install nodejs npm
-npm install -g pm2`
+```
+apt install nodejs npm
+npm install -g pm2
+```
 
 To run your process in pm2, use the following command format: 
 
-`pm2 start "<your neuron start command here>" --name "<your process name here>"`
+```pm2 start "<your neuron start command here>" --name "<your process name here>"```
 
 Full example:
 
-`pm2 start "python3 -m neurons.miner --netuid 1 --wallet.name default --wallet.hotkey default --logging.debug --axon.port 40049" --name "miner"`
+```pm2 start "python3 -m neurons.miner --netuid 1 --wallet.name default --wallet.hotkey default --logging.debug --axon.port 40049" --name "miner"```
 
 The following Commands will be useful for management: 
 
-`
+```
 pm2 list # lists all pm2 processes
 pm2 logs <pid> # replace pid with your process ID to view logs
 pm2 restart <pid> # restart this pic
 pm2 stop <pid> # stops your pid
 pm2 del <pid> # deletes your pid
 pm2 describe <pid> # prints out metadata on the process
-`
+```
 
 
 ```mermaid
