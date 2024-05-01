@@ -15,6 +15,9 @@
 - Subnet Roles
   - [Mining](#mining)
   - [Validating](#validating)
+- Helpful Guides
+  - [Using Runpod](#Using-Runpod)
+  - [Managing Processes](#Managing-Processes)
 
 ---
 
